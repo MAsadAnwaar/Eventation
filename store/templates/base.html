@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+ 
+    <!--style-->
+
+
+
+
+
+    <title>Eventations & PR</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      
+        <div class="container-fluid ">
+          <img src="static/img/log.png " alt="" width="90" height="80" class="d-inline-block align-text-top">
+          <a class="navbar-brand " href="#"> 
+            <h4> Eventations</h4></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home">Home</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                  <li><a class="dropdown-item" href="store?category=14">Wedding Event</a></li>
+                  <li><a class="dropdown-item" href="store?category=16">Corporate Event</a></li>
+                  <li><a class="dropdown-item" href="store?category=17">Social Event</a></li>
+                  <li><a class="dropdown-item" href="store?category=18">Catering </a></li>
+                  <li><a class="dropdown-item" href="store?category=19">Decor </a></li>
+                </ul>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Rent
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="store?category=7">Chair</a></li>
+                    <li><a class="dropdown-item" href="store?category=8">Table</a></li>
+                    <li><a class="dropdown-item" href="store?category=9">Carpet</a></li>
+                    <li><a class="dropdown-item" href="store?category=10">Crockery/Cutlery </a></li>
+                    <li><a class="dropdown-item" href="store?category=11">Lighting </a></li>
+                    <li><a class="dropdown-item" href="store?category=12">Flooring </a></li>
+                    <li><a class="dropdown-item" href="store?category=13">Sofas </a></li>
+                  </ul>
+
+               
+                <li class="nav-item">
+                  <a class="nav-link" href="about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact">Contact Us</a>
+                </li>
+              
+              
+            </ul>
+            <!-- <li class="nav-item ">
+              <a class="nav-link" href="/orders">Contact<span class="sr-only">(current)</span></a>
+            </li> -->
+           
+                <ul class=" navbar-nav my-2 my-lg-0">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/cart">Cart 
+                      <span class="badge badge-info">{{request.session.cart.keys|length}}</span>
+                      <span class="sr-only">(current)</span></a>
+                  </li>
+                  
+                   {% if request.session.customer %}
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
+                </li>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a button class="btn rounded-pill btn-outline-warning me-md-2" type="button"
+                  href="logout">Logout</button></a>
+                 
+                  
+                </div>
+                {% else %}
+               
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a button class="btn rounded-pill btn-outline-warning me-md-2" type="button"
+                  href="login">Login</button></a>
+                  <a button class="btn rounded-pill btn-warning " type="button"
+                  href="signup">Signup</button></a>
+                  <!-- <a button class="btn rounded-pill btn-outline-warning me-md-2" type="button"
+                  href="logout">Log Out</button></a> -->
+                </div>
+               
+                {% endif %}
+              
+            </ul>
+           
+          </div>
+        </div>
+
+      </nav>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Eventation & PR</strong>  are always gives you a excellent services.
+      </div>
+
+      <!--Nav bar end-->
+
+
+ 
+
+
+ {%block content%}}
+ {% endblock %}
+         <!-- FOOTER -->
+
+
+        <footer class="text-white text-center text-lg-start mt-5"  style="background-color: #23242a;">
+          <div class="container-fluid p-4" class = "w-100 p-3">
+            <div class="row mt-4">
+              <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                <img src="static/img/log.png " alt="" width="90" height="80" class="d-inline-block align-text-top">
+                <h5 class="text-uppercase mb-4">Eventations & PR</h5>
+      
+                <p>
+                  Eventations is an online platform for the clients who wants to 
+            organise their own events in  totally hassle free way. Whether its a wedding, corporate or 
+            social event, we do it all.
+                </p>
+    
+      
+                <div class="mt-4">
+                  <!-- Facebook -->
+                  <a type="button" class="btn btn-floating btn-warning btn-lg" href="https://facebook.com/eventationsandpr "><i class="fab fa-facebook-f" ></i></a>
+                  <!-- Dribbble -->
+                  <a type="button" class="btn btn-floating btn-warning btn-lg" href="https://instagram.com/eventationsandpr"><i class="fab fa-instagram" ></i></a>
+                  <!-- Twitter -->
+                  <a type="button" class="btn btn-floating btn-warning btn-lg"  href="https://instagram.com/eventationsandpr"><i class="fab fa-twitter"></i></a>
+                  <!-- Google + -->
+                  <a type="button" class="btn btn-floating btn-warning btn-lg" href="https://www.google.com/search?sxsrf=APq-WBuksVKsReQ8NgHpM7e04OdDKH2nPQ:1643924713667&amp;source=univ&amp;tbm=isch&amp;q=eventations+and+pr&amp;fir=shkufoK7s_6sIM%252CuoYb6-wBr0_jIM%252C_%253BuMsnQiLGpKoY5M%252CuoYb6-wBr0_jIM%252C_%253BfCh8bry91A1p9M%252CuoYb6-wBr0_jIM%252C_%253BFcRgfwE2vMrJRM%252CuoYb6-wBr0_jIM%252C_%253BwdQtq0hJvqIblM%252CuoYb6-wBr0_jIM%252C_%253BvfWH6OFVMC3qZM%252CuoYb6-wBr0_jIM%252C_&amp;usg=AI4_-kSNc7pT3BP_yUk2yI7HMm63z69uig&amp;sa=X&amp;ved=2ahUKEwiauOHkwOT1AhU0yIsBHYmiDywQ7Al6BAgeEA0&amp;biw=414&amp;bih=720&amp;dpr=2"><i class="fab fa-google-plus-g" ></i></a>
+                  <!-- Linkedin -->
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 pb-1">Get In Touch</h5>
+      
+                <div class="form-outline form-white mb-4">
+                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 48.8px;"></div><div class="form-notch-trailing"></div></div></div>
+      
+                <ul class="fa-ul" style="margin-left: 1.65em;">
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Al Heights Plaza, Floor 2, Lahore</span>
+                  </li>
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">www.eventations.com</span>
+                  </li>
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">03354932011</span>
+                  </li>
+                  <li class="mb-3">
+                    <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">03211407522</span>
+                  </li>
+                </ul>
+              </div>
+        
+              <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Services</h5>
+      
+                <li> Wedding Event.</li>
+                <li> Corporate Event.</li>
+                <li> Social Event.</li>
+                <li> Catering Services.</li>
+                <li> Decor.</li>
+                
+              </div>
+              <!--Grid column-->
+            </div>
+          </div>
+          <div class="text-dark text-center p-3" style="background-color: rgba(248, 213, 91, 1);">
+            Copyright ©2021 All rights reserved | Powered By Abdul Fatir
+            <a class="text-dark" href="">eventations.com</a>
+            <p class="float-end "><a href="#">Back to top</a></p>
+          </div>
+        </footer>
+        
+            
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>

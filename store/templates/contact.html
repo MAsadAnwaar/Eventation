@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+      <div class="clearfix mb-3  py-4 m-5">
+        <h1 class="text-center text-dark ">Contact Us</h1>
+        <p class="text-center">We’re Here To Help And Answer Any Question You Might Have Thank You.</p>
+        <hr class="featurette-divider ">
+        <form method="get" action="submit">
+          {% csrf_token %}
+        
+
+        <div class="form-group mt-5">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
+            </div>
+    
+            <div class="form-group mt-3">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="adress">Address</label>
+                <input type="adress" class="form-control" id="adress" name="adress" placeholder="Enter Your Address" required>
+            </div>
+            
+            <div class="form-group mt-3">
+                <label for="phone">Phone Number</label>
+                <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required> 
+            </div>      
+            
+            <div class="form-group mt-3">
+                <label for="com">Tell me about what you want to contact me for...</label>
+                <textarea class="form-control" id="com" rows="3" name="com" required></textarea>
+            </div>
+            <button class="btn btn-primary mt-3" type="submit">Submit</button>
+        </form>
+    
+    </div>
+
+
+    
+
+    {% endblock %}
